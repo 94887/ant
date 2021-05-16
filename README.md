@@ -5,6 +5,7 @@
   3. knex
   4. express
   5. node.js
+  6. knex.js
 # API's
   1. user reguester
      POST localhost:8080/api/register
