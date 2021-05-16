@@ -1,0 +1,35 @@
+{
+  "name": "ant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "knexfile.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "env-cmd ./config/test.env jest --watch --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/94887/ant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "acl": "^0.4.11",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mongodb": "^3.1.10",
+    "mongoose": "^5.3.16",
+    "multer": "^1.4.1",
+    "pg": "^8.6.0",
+    "validator": "^10.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "bugs": {
+    "url": "https://github.com/94887/ant/issues"
+  },
+  "homepage": "https://github.com/94887/ant#readme"
+}
