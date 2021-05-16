@@ -14,7 +14,7 @@ router.post('/api/register', async (req, res) => {
         if(await User.findOne({email: req.body.email})){
             res.json({message: "Email Already Exists"})
         }else{
-            if(await User.findOne({uniqueEmployeeId: req.body.uniqueEmployeeId})){
+            if(await User.findOne({uniqueUserId: req.body.uniqueUserId})){
                 res.json({message: "User ALready Exists"})
             }else{
                 await user.save()   
@@ -76,7 +76,32 @@ router.post('/api/users/logout', auth, async (req, res) => {
     }
 })
 
-router.get('/api/users/sort/:obj/:pageNumber/:nPerPage', auth, async (req, res) => {
+router.get('/api/users/list/:obj/:pageNumber/:nPerPage', auth, async (req, res) => {
+    try{
+        if(req.params.obj==="Firstname"){
+            sort = await User.find()
+                             .skip( req.params.pageNumber > 0 ? ( ( req.params.pageNumber - 1 ) * req.params.nPerPage ) : 0 )
+                             .limit(10)
+            res.json({sort: sort})
+        }
+        if(req.params.obj==="Lastname"){
+            sort = await User.find()
+                              .skip( req.params.pageNumber > 0 ? ( ( req.params.pageNumber - 1 ) * req.params.nPerPage ) : 0 )
+                              .limit(10)
+            res.json({sort: sort})
+        }
+        if(req.params.obj==="uniqueUserId"){
+            sort = await User.find()
+                             .skip( req.params.pageNumber > 0 ? ( ( req.params.pageNumber - 1 ) * req.params.nPerPage ) : 0 )
+                             .limit(10)
+            res.json({sort: sort})
+        }
+    }catch(e){
+        res.status(500).send(e)
+    }
+})
+
+outer.get('/api/users/sort/:obj/:pageNumber/:nPerPage', auth, async (req, res) => {
     try{
         if(req.params.obj==="Firstname"){
             sort = await User.find()
@@ -92,9 +117,23 @@ router.get('/api/users/sort/:obj/:pageNumber/:nPerPage', auth, async (req, res) 
                               .limit(10)
             res.json({sort: sort})
         }
-        if(req.params.obj==="uniqueEmployeeId"){
+        if(req.params.obj==="uniqueUserId"){
             sort = await User.find()
-                             .sort({uniqueEmployeeId: 1})
+                             .sort({uniqueUserId: 1})
+                             .skip( req.params.pageNumber > 0 ? ( ( req.params.pageNumber - 1 ) * req.params.nPerPage ) : 0 )
+                             .limit(10)
+            res.json({sort: sort})
+        }
+        if(req.params.obj==="email"){
+            sort = await User.find()
+                             .sort({uniqueUserId: 1})
+                             .skip( req.params.pageNumber > 0 ? ( ( req.params.pageNumber - 1 ) * req.params.nPerPage ) : 0 )
+                             .limit(10)
+            res.json({sort: sort})
+        }
+        if(req.params.obj==="orgName"){
+            sort = await User.find()
+                             .sort({uniqueUserId: 1})
                              .skip( req.params.pageNumber > 0 ? ( ( req.params.pageNumber - 1 ) * req.params.nPerPage ) : 0 )
                              .limit(10)
             res.json({sort: sort})
