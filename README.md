@@ -34,8 +34,8 @@
         23.    "token": ""
         24.  }
         25. postgres
-        26. id     org_name    name     userId      created_at
-        27. 1      Rachit      Rachit   1234        2021-05-16T13:10:10+00:00
+        26. id----org_name----name----userId----created_at
+        27. 1-----Rachit------Rachit--1234------2021-05-16T13:10:10+00:00
   2. user login
      POST localhost:8080/api/users/login
         data flow
