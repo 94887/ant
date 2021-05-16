@@ -13,7 +13,7 @@
         2. if email/uniqueUserId is already register it won't allow user to register
         3. user register data will save in mongoDB and userID & org_name will store in postgres
         4. if user is new user will get the unique org_id
-        mongoDB
+        5. mongoDB
           request
           {
             "firstName": "Rachit",
