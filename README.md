@@ -15,9 +15,9 @@
         4. if user is new user will get the unique org_id
         5. mongoDB
         6. request
-          {
-            "firstName": "Rachit",
-            "lastName": "Sharma",
+        7. {
+        8.  "firstName": "Rachit",
+        9.  "lastName": "Sharma",
             "uniqueUserId": "rs94887",
             "orgName": "Rachit"
             "email": "rs94887@gmail.com",
