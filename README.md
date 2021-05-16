@@ -14,7 +14,7 @@
         3. user register data will save in mongoDB and userID & org_name will store in postgres
         4. if user is new user will get the unique org_id
         5. mongoDB
-          request
+         6. request
           {
             "firstName": "Rachit",
             "lastName": "Sharma",
@@ -33,7 +33,7 @@
             "password": "nsdbhbsd7sd5b3nbehkbw" //hashed password
             "token": ""
           }
-        postgres
+        6. postgres
         id     org_name    name     userId      created_at
         1      Rachit      Rachit   1234        2021-05-16T13:10:10+00:00
   2. user login
