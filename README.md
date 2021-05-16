@@ -18,24 +18,24 @@
         7. {
         8.  "firstName": "Rachit",
         9.  "lastName": "Sharma",
-            "uniqueUserId": "rs94887",
-            "orgName": "Rachit"
-            "email": "rs94887@gmail.com",
-            "password": "*********"
-          }
-          response
-          {
-            "firstName": "Rachit",
-            "lastName": "Sharma",
-            "uniqueUserId": "rs94887",
-            "orgName": "Rachit"
-            "email": "rs94887@gmail.com",
-            "password": "nsdbhbsd7sd5b3nbehkbw" //hashed password
-            "token": ""
-          }
-        7. postgres
-        id     org_name    name     userId      created_at
-        1      Rachit      Rachit   1234        2021-05-16T13:10:10+00:00
+        10.    "uniqueUserId": "rs94887",
+        11.    "orgName": "Rachit"
+        12.    "email": "rs94887@gmail.com",
+        13.    "password": "*********"
+        14.  }
+        15.  response
+        16.  {
+        17.    "firstName": "Rachit",
+        18.    "lastName": "Sharma",
+        19.    "uniqueUserId": "rs94887",
+        20.    "orgName": "Rachit"
+        21.    "email": "rs94887@gmail.com",
+        22.    "password": "nsdbhbsd7sd5b3nbehkbw" //hashed password
+        23.    "token": ""
+        24.  }
+        25. postgres
+        26. id     org_name    name     userId      created_at
+        27. 1      Rachit      Rachit   1234        2021-05-16T13:10:10+00:00
   2. user login
      POST localhost:8080/api/users/login
         data flow
