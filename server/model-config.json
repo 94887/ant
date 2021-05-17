@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "sources": [
+      "../modules/user-management"
+    ],
+    "mixins": [
+      "../node_modules/loopback-ds-timestamp-mixin",
+      "../utils/mixins/",
+      "mixins/"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "mongoDB",
+    "public": true,
+    "relations": {
+      "user": {
+        "type": "belongsTo",
+        "model": "user",
+        "foreignKey": "userId"
+      }
+    }
+  },
+  "user": {
+    "dataSource": "mongoDB",
+    "public": true,
+    "options": {}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "kv": {
+    "name": "kv",
+    "connector": "kv-memory"
+  },
+  "mongoDB": {
+      "url": "",
+      "connector": "mongodb",
+      "useNewUrlParser": true
+  },
+  "memory": {
+    "name": "memory",
+    "connector": "memory"
+  },
+  "redisDS": {
+    "name": "redisDS",
+    "connector": "redis"
+  }
+}
