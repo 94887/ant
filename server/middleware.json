@@ -1,0 +1,55 @@
+{
+  "initial:before": {
+    "loopback#favicon": {}
+  },
+  "initial": {
+    "compression": {},
+    "cors": {
+      "params": {
+        "origin": true,
+        "credentials": true,
+        "maxAge": 86400
+      }
+    }
+  },
+  "session": {},
+  "auth": {},
+  "parse:before": {
+    "./middleware/configure-i18n": {}
+  },
+  "parse": {},
+  "parse:after": {
+    "express-request-id": {},
+    "./middleware/token": {},
+    "./middleware/auth": {},
+    "./middleware/log-request": {}
+  },
+  "routes": {
+    "./middleware/req-sanitizer": {},
+    "./middleware/log-response": {},
+    "loopback#rest": {
+      "paths": [
+        "${restApiRoot}"
+      ]
+    }
+  },
+  "files": {
+    "loopback#static": {
+      "params": "$!../apidoc"
+    }
+  },
+  "final:before": {
+  },
+  "final": {
+    "loopback#urlNotFound": {}
+  },
+  "final:after": {
+    "./middleware/error-handler": {},
+    "strong-error-handler": {
+      "params": {
+        "debug": true,
+        "log": true
+      }
+    }
+  }
+}

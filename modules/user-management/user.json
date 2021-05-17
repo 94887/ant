@@ -1,0 +1,56 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "updateOnLoad": true,
+  "normalizeUndefinedInQuery": "nullify",
+  "options": {
+    "maxTTL": 1209600000
+  },
+  "properties": {
+    "userId": {
+      "type": "string",
+      "required": false,
+      "id": true  
+    },
+    "email" : {
+      "type": "string",
+      "required": true
+    },
+    "password" : {
+      "type": "string",
+      "required": true
+    },
+    "firstName" : {
+      "type": "string",
+      "required": true
+    },
+    "lastName" : {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "restrictResetPasswordTokenScope": true,
+  "emailVerificationRequired": true,
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "accessType": "*",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "accessType": "READ",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": []
+}
